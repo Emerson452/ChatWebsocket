@@ -1,0 +1,7 @@
+nelmio_cors:
+    paths:
+        '^/api/':
+            allow_origin: ['http://localhost:5173/']  # Remplacez par l'URL de votre domaine front-end
+            allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+            allow_headers: ['Content-Type', 'Authorization']
+            max_age: 3600
