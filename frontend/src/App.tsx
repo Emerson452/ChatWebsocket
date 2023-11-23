@@ -6,6 +6,20 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  fetch('https://votre-domaine-symfony.com/api/endpoint')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! Statut: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Erreur lors de la requête:', error);
+  });
+  
   return (
     <>
       <div>
